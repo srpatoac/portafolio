@@ -188,6 +188,10 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
+            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABkAGQDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD//2Q==');
+            background-size: cover;
+            background-position: center;
+            padding: 0;
         }
 
         .profile-img::before {
@@ -701,7 +705,86 @@
             font-size: 0.95rem;
         }
 
-        /* Server List - MEJORADO */
+        /* Education Grid - NUEVO */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .education-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 
+                0 15px 40px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .education-card:hover {
+            transform: translateY(-20px) rotateX(5deg);
+            border-color: rgba(255, 215, 0, 0.5);
+            box-shadow: 
+                0 30px 70px rgba(255, 215, 0, 0.25), 
+                0 0 50px rgba(6, 182, 212, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .education-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #ffd700, #ff6b6b, #06b6d4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+            animation: educationPulse 3.5s ease-in-out infinite;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .education-card:hover .education-icon {
+            transform: scale(1.2) rotate(360deg);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
+        }
+
+        @keyframes educationPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7), 0 10px 25px rgba(255, 215, 0, 0.3); }
+            50% { box-shadow: 0 0 0 15px rgba(255, 215, 0, 0), 0 15px 40px rgba(255, 215, 0, 0.5); }
+        }
+
+        .education-duration {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffd700;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .education-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #06b6d4;
+        }
+
+        .education-note {
+            color: #8b949e;
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Server List - MEJORADO CON LOGOS */
         .server-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -745,6 +828,50 @@
             animation: serverIconBounce 3s ease-in-out infinite;
             transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Logos específicos para cada servidor */
+        .server-icon.flamecraft {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaElEQVRoge3YMQ0AMAzAsPo/z42XVoGMDOyqzswOHNx+wgMPPPDAAw888MADDzzwwAMPPPDAAw888MADDzzwwAMPPPDAAw888MADDzzwwAMPPPDAAw888MADDzzwwAMPPPDAAw888MADDzzw/BF80VYFvVkISdkAAAAASUVORK5CYII=');
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+        }
+
+        .server-icon.crystalia {
+            background: linear-gradient(45deg, #9c27b0, #e91e63);
+        }
+
+        .server-icon.prisma {
+            background: linear-gradient(45deg, #2196f3, #21cbf3);
+        }
+
+        .server-icon.kenibox {
+            background: linear-gradient(45deg, #4caf50, #8bc34a);
+        }
+
+        .server-icon.mineluxy {
+            background: linear-gradient(45deg, #ffd700, #ffb300);
+        }
+
+        .server-icon.atlantic {
+            background: linear-gradient(45deg, #00bcd4, #006064);
+        }
+
+        .server-icon.lowbox {
+            background: linear-gradient(45deg, #795548, #5d4037);
+        }
+
+        .server-icon.overcraft {
+            background: linear-gradient(45deg, #ff5722, #d84315);
+        }
+
+        .server-icon.sumerland {
+            background: linear-gradient(45deg, #3f51b5, #1a237e);
+        }
+
+        .server-icon.meteor {
+            background: linear-gradient(45deg, #e91e63, #ad1457);
         }
 
         .server-item:hover .server-icon {
@@ -967,6 +1094,7 @@
 
             .achievements-grid,
             .skills-grid,
+            .education-grid,
             .server-list {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -1016,7 +1144,8 @@
 
             .glass-card,
             .achievement-card,
-            .skill-card {
+            .skill-card,
+            .education-card {
                 padding: 2rem;
             }
 
@@ -1045,7 +1174,7 @@
                 padding: 0;
             }
             
-            .glass-card, .achievement-card, .skill-card, .server-item, .contact-section {
+            .glass-card, .achievement-card, .skill-card, .education-card, .server-item, .contact-section {
                 background: white !important;
                 color: black !important;
                 border: 2px solid #ccc !important;
@@ -1068,11 +1197,11 @@
                 color: #333 !important;
             }
             
-            .achievement-title, .skill-title {
+            .achievement-title, .skill-title, .education-title {
                 color: #666 !important;
             }
             
-            .achievement-server, .server-info h3 {
+            .achievement-server, .server-info h3, .education-duration {
                 color: #888 !important;
             }
         }
@@ -1107,6 +1236,7 @@
             .glass-card,
             .achievement-card,
             .skill-card,
+            .education-card,
             .server-item {
                 border-width: 3px;
             }
@@ -1136,9 +1266,7 @@
     <!-- Sidebar -->
     <nav class="sidebar" id="sidebar">
         <div class="profile-section">
-            <div class="profile-img">
-                <i class="fas fa-user"></i>
-            </div>
+            <div class="profile-img"></div>
             <h2 class="profile-name">Alex</h2>
             <p class="profile-title">SrPatoAC</p>
         </div>
@@ -1163,6 +1291,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a href="#education" class="nav-link" onclick="setActive(this)">
+                    <i class="fas fa-graduation-cap"></i>
+                    Estudios
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="#servers" class="nav-link" onclick="setActive(this)">
                     <i class="fas fa-server"></i>
                     Servidores
@@ -1183,7 +1317,7 @@
         <header class="header" data-aos="fade-up">
             <div class="header-content">
                 <h1>Alex - SrPatoAC</h1>
-                <p class="subtitle">Staff Manager | SS Mentor | SS Trainer | Developer </p>
+                <p class="subtitle">General Manager | Staff Manager | SS Manager | Head Admin | SS Mentor | SS Trainer | Developer | MC Developer | DC</p>
                 <p class="experience">Más de 3 años de experiencia de Staff profesional y 1 Año de Experiencia de Staff Manager y General Manager</p>
             </div>
         </header>
@@ -1195,7 +1329,7 @@
                 <p>
                     Soy <strong style="color: #06b6d4;">Alex</strong>, conocido como <strong style="color: #4f46e5;">SrPatoAC</strong>, 
                     y tengo más de <strong style="color: #ffd700;">3 años de experiencia</strong> en el ámbito del Staff profesional, <strong style="color: #ffd700;">1 año de experiencia</strong>
-                    en el ambiente de Staff Manager especializado en <strong>Screenshare</strong>, manejo de equipos, y desarrollo.
+                    en el ambiente de Staff Manager y General Manager especializado en <strong>Screenshare</strong>, manejo de equipos, y desarrollo.
                     <br><br>
                     Me defino por la <strong style="color: #06b6d4;">disciplina</strong>, 
                     <strong style="color: #4f46e5;">confianza técnica</strong> y 
@@ -1211,56 +1345,12 @@
             <div class="achievements-grid">
                 <div class="achievement-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="achievement-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3 class="achievement-title">SS Trainer</h3>
-                    <h4 class="achievement-server">Prisma MC</h4>
-                    <p class="achievement-description">
-                        Formación de staff en conocimientos de SS, Administración del SS Team, Cambios, Normas y Demás.
-                    </p>
-                </div>
-
-                <div class="achievement-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="achievement-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3 class="achievement-title">SS Mentor</h3>
-                    <h4 class="achievement-server">Kenibox</h4>
-                    <p class="achievement-description">
-                        Mentoría directa y personal en miembros del SS Team, revisión de casos complejos y liderazgo técnico.
-                    </p>
-                </div>
-
-                <div class="achievement-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="achievement-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="achievement-title">SS Manager y Staff Manager</h3>
-                    <h4 class="achievement-server">SumerLand</h4>
-                    <p class="achievement-description">
-                        Gestión completa del SS Team y el Staff Team con protocolos internos de revisión.
-                    </p>
-                </div>
-
-                <div class="achievement-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="achievement-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="achievement-title">SS Manager Staff Team</h3>
-                    <h4 class="achievement-server">MeteorMC</h4>
-                    <p class="achievement-description">
-                        Gestión completa del SS Team y Staff Team con protocolos internos de revisión.
-                    </p>
-                </div>
-
-                <div class="achievement-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="achievement-icon">
                         <i class="fas fa-crown"></i>
                     </div>
-                    <h3 class="achievement-title">Staff Manager</h3>
-                    <h4 class="achievement-server">MineLuxy Network</h4>
+                    <h3 class="achievement-title">General Manager</h3>
+                    <h4 class="achievement-server">Comunidades Discord</h4>
                     <p class="achievement-description">
-                        Gestión completa del Staff Team y protocolos internos de revisión.
+                        Desarrollo de bots, gestión de comunidades Discord y sistemas de moderación automatizados.
                     </p>
                 </div>
             </div>
@@ -1274,7 +1364,7 @@
                     <div class="skill-icon">
                         <i class="fas fa-chalkboard-teacher"></i>
                     </div>
-                    <h3 class="skill-title">Trainer SS</h3>
+                    <h3 class="skill-title">SS Trainer</h3>
                     <p>Formación de nuevos revisores, protocolos de revisión, uso ético de herramientas SS.</p>
                 </div>
 
@@ -1282,7 +1372,7 @@
                     <div class="skill-icon">
                         <i class="fas fa-eye"></i>
                     </div>
-                    <h3 class="skill-title">Mentor SS</h3>
+                    <h3 class="skill-title">SS Mentor</h3>
                     <p>Supervisión técnica de evaluaciones, creación de guías internas y asesorías personalizadas.</p>
                 </div>
 
@@ -1309,7 +1399,73 @@
                     <h3 class="skill-title">Staff General</h3>
                     <p>Moderación, soporte, resolución de conflictos, sanciones, uso de celdas y capturas.</p>
                 </div>
+
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="skill-icon">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                    <h3 class="skill-title">Discord Management</h3>
+                    <p>Bots personalizados, sistemas de moderación, gestión de comunidades y automatización.</p>
+                </div>
             </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section" data-aos="fade-up">
+            <h2 class="section-title">Estudios y Formación</h2>
+            <div class="education-grid">
+                <div class="education-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="education-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="education-duration">3 Años</div>
+                    <h3 class="education-title">Técnico en Programación</h3>
+                    <p class="education-description">
+                        Formación completa en desarrollo de software, programación orientada a objetos, 
+                        bases de datos y metodologías de desarrollo.
+                    </p>
+                </div>
+
+                <div class="education-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="education-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="education-duration">1 Año</div>
+                    <h3 class="education-title">Enseñanza de SS</h3>
+                    <p class="education-description">
+                        Especialización en técnicas de Screenshare, detección de cheats, 
+                        uso ético de herramientas y formación de equipos SS.
+                    </p>
+                </div>
+
+                <div class="education-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="education-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="education-duration">3 Años</div>
+                    <h3 class="education-title">Curso de Liderazgo y Manejo de Equipos</h3>
+                    <p class="education-description">
+                        Desarrollo de habilidades gerenciales, liderazgo efectivo, 
+                        gestión de conflictos y motivación de equipos.
+                    </p>
+                </div>
+
+                <div class="education-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="education-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="education-duration">1 Año</div>
+                    <h3 class="education-title">Curso de Recursos</h3>
+                    <p class="education-description">
+                        Gestión de recursos humanos, optimización de procesos, 
+                        planificación estratégica y administración eficiente.
+                    </p>
+                </div>
+            </div>
+            <p class="education-note">
+                * La mayoría de los cursos fueron realizados de manera simultánea, 
+                demostrando capacidad de multitarea y dedicación al aprendizaje continuo.
+            </p>
         </section>
 
         <!-- Servers Section -->
@@ -1317,7 +1473,7 @@
             <h2 class="section-title">Participación en Servidores</h2>
             <div class="server-list">
                 <div class="server-item" data-aos="fade-right" data-aos-delay="100">
-                    <div class="server-icon"><i class="fas fa-fire"></i></div>
+                    <div class="server-icon flamecraft"><i class="fas fa-fire"></i></div>
                     <div class="server-info">
                         <h3>FlameCraft</h3>
                         <span>Head Mod</span>
@@ -1325,7 +1481,7 @@
                 </div>
 
                 <div class="server-item" data-aos="fade-right" data-aos-delay="150">
-                    <div class="server-icon"><i class="fas fa-gem"></i></div>
+                    <div class="server-icon crystalia"><i class="fas fa-gem"></i></div>
                     <div class="server-info">
                         <h3>Crystalia MC</h3>
                         <span>Mod</span>
@@ -1333,23 +1489,23 @@
                 </div>
 
                 <div class="server-item" data-aos="fade-right" data-aos-delay="200">
-                    <div class="server-icon"><i class="fas fa-prism"></i></div>
+                    <div class="server-icon prisma"><i class="fas fa-prism"></i></div>
                     <div class="server-info">
                         <h3>Prisma MC</h3>
-                        <span>Head Mod</span>
+                        <span>SS Trainer</span>
                     </div>
                 </div>
 
                 <div class="server-item" data-aos="fade-right" data-aos-delay="250">
-                    <div class="server-icon"><i class="fas fa-cube"></i></div>
+                    <div class="server-icon kenibox"><i class="fas fa-cube"></i></div>
                     <div class="server-info">
                         <h3>KeniBox</h3>
-                        <span>Jr Mod</span>
+                        <span>SS Mentor</span>
                     </div>
                 </div>
 
                 <div class="server-item" data-aos="fade-right" data-aos-delay="300">
-                    <div class="server-icon"><i class="fas fa-crown"></i></div>
+                    <div class="server-icon mineluxy"><i class="fas fa-crown"></i></div>
                     <div class="server-info">
                         <h3>MineLuxy Network</h3>
                         <span>Staff Manager</span>
@@ -1357,14 +1513,15 @@
                 </div>
 
                 <div class="server-item" data-aos="fade-right" data-aos-delay="350">
-                    <div class="server-icon"><i class="fas fa-water"></i></div>
+                    <div class="server-icon atlantic"><i class="fas fa-water"></i></div>
                     <div class="server-info">
                         <h3>Atlantic MC</h3>
+                        <span>Head Admin</span>
                     </div>
                 </div>
 
                 <div class="server-item" data-aos="fade-right" data-aos-delay="400">
-                    <div class="server-icon"><i class="fas fa-box"></i></div>
+                    <div class="server-icon lowbox"><i class="fas fa-box"></i></div>
                     <div class="server-info">
                         <h3>LowBox</h3>
                         <span>Admin</span>
@@ -1372,7 +1529,7 @@
                 </div>
 
                 <div class="server-item" data-aos="fade-right" data-aos-delay="450">
-                    <div class="server-icon"><i class="fas fa-network-wired"></i></div>
+                    <div class="server-icon overcraft"><i class="fas fa-network-wired"></i></div>
                     <div class="server-info">
                         <h3>OverCraftNetwork</h3>
                         <span>Admin</span>
@@ -1380,7 +1537,7 @@
                 </div>
 
                 <div class="server-item" data-aos="fade-right" data-aos-delay="500">
-                    <div class="server-icon"><i class="fas fa-map"></i></div>
+                    <div class="server-icon sumerland"><i class="fas fa-map"></i></div>
                     <div class="server-info">
                         <h3>SumerLand</h3>
                         <span>Staff Manager</span>
@@ -1388,10 +1545,10 @@
                 </div>
 
                 <div class="server-item" data-aos="fade-right" data-aos-delay="550">
-                    <div class="server-icon"><i class="fas fa-meteor"></i></div>
+                    <div class="server-icon meteor"><i class="fas fa-meteor"></i></div>
                     <div class="server-info">
                         <h3>MeteorMC</h3>
-                        <span>Staff Manager</span>
+                        <span>SS Manager</span>
                     </div>
                 </div>
             </div>
@@ -1591,6 +1748,24 @@
             }, 1000);
         }
 
+        // Load profile image from uploaded file
+        async function loadProfileImage() {
+            try {
+                const profileImg = document.querySelector('.profile-img');
+                const fileData = await window.fs.readFile('improved_cv.html', { encoding: 'utf8'});
+                
+                // Extract base64 image from the uploaded file if it exists
+                const base64Match = fileData.match(/data:image\/[^;]+;base64,[^"']+/);
+                if (base64Match) {
+                    profileImg.style.backgroundImage = `url('${base64Match[0]}')`;
+                    profileImg.innerHTML = ''; // Remove the icon
+                }
+            } catch (error) {
+                // If file reading fails, keep the default avatar
+                console.log('Using default avatar');
+            }
+        }
+
         // Notification System
         function showNotification(message) {
             // Remove existing notifications
@@ -1638,26 +1813,11 @@
             }, 3500);
         }
 
-        // Parallax Effect for Header
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.3;
-            const header = document.querySelector('.header');
-            
-            if (header) {
-                header.style.transform = `translateY(${rate}px)`;
-            }
-
-            // Parallax for particles
-            const particles = document.querySelectorAll('.particle');
-            particles.forEach((particle, index) => {
-                const speed = (index + 1) * 0.1;
-                particle.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-        });
-
         // Enhanced Loading Animation
         window.addEventListener('load', function() {
+            // Load profile image
+            loadProfileImage();
+            
             document.body.style.opacity = '0';
             document.body.style.transition = 'opacity 1s ease';
             
@@ -1712,51 +1872,6 @@
             }, 200);
         });
 
-        // Enhanced mouse trail effect
-        let mouseTrail = [];
-        const trailLength = 8;
-        let mouseX = 0, mouseY = 0;
-
-        document.addEventListener('mousemove', function(e) {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            
-            mouseTrail.push({x: mouseX, y: mouseY, time: Date.now()});
-            if (mouseTrail.length > trailLength) {
-                mouseTrail.shift();
-            }
-        });
-
-        // Continuous trail update
-        setInterval(() => {
-            // Remove existing trail elements
-            document.querySelectorAll('.mouse-trail').forEach(el => el.remove());
-
-            // Create new trail elements
-            mouseTrail.forEach((point, index) => {
-                const age = Date.now() - point.time;
-                if (age < 500) { // Only show recent trail points
-                    const trail = document.createElement('div');
-                    trail.className = 'mouse-trail';
-                    trail.style.cssText = `
-                        position: fixed;
-                        width: ${10 - index}px;
-                        height: ${10 - index}px;
-                        background: linear-gradient(45deg, #06b6d4, #4f46e5);
-                        border-radius: 50%;
-                        pointer-events: none;
-                        z-index: 9998;
-                        left: ${point.x}px;
-                        top: ${point.y}px;
-                        opacity: ${(trailLength - index) / trailLength * 0.6};
-                        transform: translate(-50%, -50%);
-                        transition: opacity 0.1s ease;
-                    `;
-                    document.body.appendChild(trail);
-                }
-            });
-        }, 16); // ~60fps
-
         // Intersection Observer for enhanced animations
         const observerOptions = {
             threshold: 0.1,
@@ -1786,6 +1901,11 @@
                         const delay = Array.from(target.parentNode.children).indexOf(target) * 200;
                         target.style.animation = `skillFlipIn 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275) ${delay}ms both`;
                     }
+
+                    if (target.classList.contains('education-card')) {
+                        const delay = Array.from(target.parentNode.children).indexOf(target) * 180;
+                        target.style.animation = `educationSlideIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) ${delay}ms both`;
+                    }
                     
                     if (target.classList.contains('server-item')) {
                         const delay = Array.from(target.parentNode.children).indexOf(target) * 80;
@@ -1797,7 +1917,7 @@
 
         // Observe elements for animations
         document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.section-title, .glass-card, .achievement-card, .skill-card, .server-item').forEach(el => {
+            document.querySelectorAll('.section-title, .glass-card, .achievement-card, .skill-card, .education-card, .server-item').forEach(el => {
                 animateOnScroll.observe(el);
             });
         });
@@ -1837,41 +1957,6 @@
             }
         });
 
-        // Enhanced card hover effects
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.glass-card, .achievement-card, .skill-card, .server-item');
-            
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function(e) {
-                    // Create ripple effect
-                    const rect = this.getBoundingClientRect();
-                    const ripple = document.createElement('div');
-                    ripple.style.cssText = `
-                        position: absolute;
-                        border-radius: 50%;
-                        background: rgba(6, 182, 212, 0.3);
-                        transform: scale(0);
-                        animation: ripple 0.6s linear;
-                        pointer-events: none;
-                        left: ${e.clientX - rect.left}px;
-                        top: ${e.clientY - rect.top}px;
-                        width: 20px;
-                        height: 20px;
-                        margin-left: -10px;
-                        margin-top: -10px;
-                    `;
-                    
-                    this.appendChild(ripple);
-                    
-                    setTimeout(() => {
-                        if (ripple.parentNode) {
-                            ripple.parentNode.removeChild(ripple);
-                        }
-                    }, 600);
-                });
-            });
-        });
-
         // Add scroll animation styles
         const scrollAnimationStyles = document.createElement('style');
         scrollAnimationStyles.textContent = `
@@ -1896,6 +1981,11 @@
                 50% { opacity: 0.5; transform: rotateY(-45deg) translateZ(-50px); }
                 100% { opacity: 1; transform: rotateY(0deg) translateZ(0px); }
             }
+
+            @keyframes educationSlideIn {
+                0% { opacity: 0; transform: translateY(80px) rotateX(20deg); }
+                100% { opacity: 1; transform: translateY(0) rotateX(0deg); }
+            }
             
             @keyframes serverSlideIn {
                 0% { opacity: 0; transform: translateX(-120px) rotate(-15deg); }
@@ -1911,57 +2001,95 @@
         `;
         document.head.appendChild(scrollAnimationStyles);
 
-        // Performance optimization: Debounce scroll events
-        function debounce(func, wait) {
-            let timeout;
-            return function executedFunction(...args) {
-                const later = () => {
-                    clearTimeout(timeout);
-                    func(...args);
-                };
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-            };
-        }
-
-        // Apply debouncing to scroll events
-        window.addEventListener('scroll', debounce(function() {
-            if (window.pageYOffset > 300) {
-                scrollTopBtn.classList.add('visible');
-            } else {
-                scrollTopBtn.classList.remove('visible');
-            }
-        }, 10));
-
-        // Keyboard navigation support
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                const sidebar = document.getElementById('sidebar');
-                if (window.innerWidth <= 968 && sidebar.classList.contains('active')) {
-                    sidebar.classList.remove('active');
-                }
-            }
-        });
-
-        // Touch device optimizations
-        if ('ontouchstart' in window) {
-            document.body.classList.add('touch-device');
-            
-            // Reduce animations on touch devices for better performance
-            const style = document.createElement('style');
-            style.textContent = `
-                .touch-device .particle {
-                    display: none;
-                }
-                .touch-device .bg-animation::before,
-                .touch-device .bg-animation::after {
-                    animation-duration: 10s;
-                }
-            `;
-            document.head.appendChild(style);
-        }
-
-        console.log('🚀 CV de Alex - SrPatoAC cargado exitosamente!');
+        console.log('🚀 CV de Alex - SrPatoAC cargado exitosamente con todas las mejoras!');
     </script>
 </body>
-</html>
+</html>Varios Servidores</h4>
+                    <p class="achievement-description">
+                        Administración completa de servidores, gestión de todos los equipos, toma de decisiones estratégicas y supervisión general.
+                    </p>
+                </div>
+
+                <div class="achievement-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="achievement-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="achievement-title">Staff Manager</h3>
+                    <h4 class="achievement-server">MineLuxy Network</h4>
+                    <p class="achievement-description">
+                        Gestión completa del Staff Team, protocolos internos de revisión, promociones y capacitaciones.
+                    </p>
+                </div>
+
+                <div class="achievement-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="achievement-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="achievement-title">SS Manager</h3>
+                    <h4 class="achievement-server">MeteorMC</h4>
+                    <p class="achievement-description">
+                        Gestión completa del SS Team con protocolos internos de revisión y formación especializada.
+                    </p>
+                </div>
+
+                <div class="achievement-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="achievement-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="achievement-title">Head Admin</h3>
+                    <h4 class="achievement-server">Varios Servidores</h4>
+                    <p class="achievement-description">
+                        Administración de alto nivel, supervisión de moderadores y coordinación de equipos.
+                    </p>
+                </div>
+
+                <div class="achievement-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="achievement-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="achievement-title">SS Mentor</h3>
+                    <h4 class="achievement-server">Kenibox</h4>
+                    <p class="achievement-description">
+                        Mentoría directa y personal en miembros del SS Team, revisión de casos complejos y liderazgo técnico.
+                    </p>
+                </div>
+
+                <div class="achievement-card" data-aos="fade-up" data-aos-delay="350">
+                    <div class="achievement-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="achievement-title">SS Trainer</h3>
+                    <h4 class="achievement-server">Prisma MC</h4>
+                    <p class="achievement-description">
+                        Formación de staff en conocimientos de SS, Administración del SS Team, Cambios, Normas y Demás.
+                    </p>
+                </div>
+
+                <div class="achievement-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="achievement-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="achievement-title">Developer</h3>
+                    <h4 class="achievement-server">Múltiples Proyectos</h4>
+                    <p class="achievement-description">
+                        Desarrollo de plugins, sistemas internos y herramientas especializadas para servidores.
+                    </p>
+                </div>
+
+                <div class="achievement-card" data-aos="fade-up" data-aos-delay="450">
+                    <div class="achievement-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="achievement-title">MC Developer</h3>
+                    <h4 class="achievement-server">Varios Servidores</h4>
+                    <p class="achievement-description">
+                        Desarrollo específico para Minecraft, optimización de servidores y creación de funcionalidades únicas.
+                    </p>
+                </div>
+
+                <div class="achievement-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="achievement-icon">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                    <h3 class="achievement-title">DC (Discord)</h3>
+                    <h4 class="achievement-server">
